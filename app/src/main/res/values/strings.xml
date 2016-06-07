@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyRxjavaDemo</string>
+    <string name="string_network_request">Network Request</string>
+    <string name="string_GET">GET</string>
 </resources>

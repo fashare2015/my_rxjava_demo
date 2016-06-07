@@ -1,7 +1,12 @@
 package com.example.i_jinliangshan.myrxjavademo;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,10 +15,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new Thread(() -> init()).start();
+        ButterKnife.bind(this);
     }
 
-    private void init() {
 
+    @OnClick(R.id.btn_network_request)
+    public void onClick() {
+        startActivity(NetworkRequestActivity.class);
+    }
+
+    private void startActivity(Class<? extends Activity> activityClass) {
+        startActivity(new Intent(this, activityClass));
     }
 }
